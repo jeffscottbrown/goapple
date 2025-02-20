@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/jeffscottbrown/applemusic/model"
+	"github.com/jeffscottbrown/goapple/model"
 	"github.com/patrickmn/go-cache"
 )
 

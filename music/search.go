@@ -14,7 +14,7 @@ import (
 
 var searchCache = cache.New(5*time.Minute, 10*time.Minute)
 
-const AppleMusicAPI = "https://itunes.apple.com/search"
+var AppleMusicAPI = "https://itunes.apple.com/search"
 
 func SearchApple(searchTerm string, limit string) (model.SearchResult, string) {
 	cachKey := fmt.Sprintf("%s-%s", searchTerm, limit)
@@ -31,7 +31,7 @@ func SearchApple(searchTerm string, limit string) (model.SearchResult, string) {
 
 	var errorMessage string
 	var result model.SearchResult
-	if err != nil {
+	if err != nil || resp.StatusCode != http.StatusOK {
 		errorMessage = "Failed to fetch data"
 	} else {
 		defer resp.Body.Close()

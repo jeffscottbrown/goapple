@@ -1,6 +1,6 @@
 module github.com/jeffscottbrown/goapple
 
-go 1.24.0
+go 1.24.2
 
 require (
 	github.com/h2non/gock v1.2.0
